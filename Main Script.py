@@ -14,3 +14,8 @@ from keras.initializers import glorot_uniform
 from keras.utils import to_categorical
 from keras.optimizers import Adam
 from keras import backend as K
+
+
+
+
+IPython.display.Audio('./data/30s_seq.mp3')
