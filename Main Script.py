@@ -19,3 +19,10 @@ from keras import backend as K
 
 
 IPython.display.Audio('./data/30s_seq.mp3')
+
+X, Y, n_values, indices_values = load_music_utils()
+print('shape of X:', X.shape)
+print('number of training examples:', X.shape[0])
+print('Tx (length of sequence):', X.shape[1])
+print('total # of unique values:', n_values)
+print('Shape of Y:', Y.shape)
