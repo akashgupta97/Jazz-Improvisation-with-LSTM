@@ -26,3 +26,7 @@ print('number of training examples:', X.shape[0])
 print('Tx (length of sequence):', X.shape[1])
 print('total # of unique values:', n_values)
 print('Shape of Y:', Y.shape)
+
+
+
+n_a = 64
