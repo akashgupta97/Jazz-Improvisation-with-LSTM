@@ -30,3 +30,7 @@ print('Shape of Y:', Y.shape)
 
 
 n_a = 64
+
+reshapor = Reshape((1, 78))                        # Used in Step 2.B of djmodel(), below
+LSTM_cell = LSTM(n_a, return_state = True)         # Used in Step 2.C
+densor = Dense(n_values, activation='softmax')     # Used in Step 2.D
