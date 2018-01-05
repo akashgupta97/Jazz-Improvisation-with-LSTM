@@ -34,3 +34,28 @@ n_a = 64
 reshapor = Reshape((1, 78))                        # Used in Step 2.B of djmodel(), below
 LSTM_cell = LSTM(n_a, return_state = True)         # Used in Step 2.C
 densor = Dense(n_values, activation='softmax')     # Used in Step 2.D
+
+
+# GRADED FUNCTION: djmodel
+
+def djmodel(Tx, n_a, n_values):
+    """
+    Implement the model
+
+    Arguments:
+    Tx -- length of the sequence in a corpus
+    n_a -- the number of activations used in our model
+    n_values -- number of unique values in the music data
+
+    Returns:
+    model -- a keras model with the
+    """
+
+    # Define the input of your model with a shape
+    X = Input(shape=(Tx, n_values))
+
+    # Define s0, initial hidden state for the decoder LSTM
+    a0 = Input(shape=(n_a,), name='a0')
+    c0 = Input(shape=(n_a,), name='c0')
+    a = a0
+    c = c0
