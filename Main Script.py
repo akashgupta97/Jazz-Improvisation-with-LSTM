@@ -59,3 +59,20 @@ def djmodel(Tx, n_a, n_values):
     c0 = Input(shape=(n_a,), name='c0')
     a = a0
     c = c0
+
+    ### START CODE HERE ###
+    # Step 1: Create empty list to append the outputs while you iterate (≈1 line)
+    outputs = []
+
+    # Step 2: Loop
+    for t in range(Tx):
+        # Step 2.A: select the "t"th time step vector from X.
+        x = Lambda(lambda x: X[:, t, :])(X)
+        # Step 2.B: Use reshapor to reshape x to be (1, n_values) (≈1 line)
+        x = reshapor(x)
+        # Step 2.C: Perform one step of the LSTM_cell
+        a, _, c = LSTM_cell(x, initial_state=[a, c])
+        # Step 2.D: Apply densor to the hidden state output of LSTM_Cell
+        out = densor(a)
+        # Step 2.E: add the output to "outputs"
+        outputs.append(out)
