@@ -76,3 +76,10 @@ def djmodel(Tx, n_a, n_values):
         out = densor(a)
         # Step 2.E: add the output to "outputs"
         outputs.append(out)
+
+        # Step 3: Create model instance
+        model = Model([X, a0, c0], outputs)
+
+        ### END CODE HERE ###
+
+        return model
