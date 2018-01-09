@@ -83,3 +83,5 @@ def djmodel(Tx, n_a, n_values):
         ### END CODE HERE ###
 
         return model
+
+    model = djmodel(Tx=30, n_a=64, n_values=78)
