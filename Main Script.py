@@ -85,3 +85,7 @@ def djmodel(Tx, n_a, n_values):
         return model
 
     model = djmodel(Tx=30, n_a=64, n_values=78)
+
+    opt = Adam(lr=0.01, beta_1=0.9, beta_2=0.999, decay=0.01)
+
+    model.compile(optimizer=opt, loss='categorical_crossentropy', metrics=['accuracy'])
