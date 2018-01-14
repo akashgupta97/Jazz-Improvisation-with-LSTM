@@ -93,3 +93,5 @@ def djmodel(Tx, n_a, n_values):
     m = 60
     a0 = np.zeros((m, n_a))
     c0 = np.zeros((m, n_a))
+
+    model.fit([X, a0, c0], list(Y), epochs=100)
