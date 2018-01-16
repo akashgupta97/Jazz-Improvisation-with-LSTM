@@ -95,3 +95,21 @@ def djmodel(Tx, n_a, n_values):
     c0 = np.zeros((m, n_a))
 
     model.fit([X, a0, c0], list(Y), epochs=100)
+
+    # GRADED FUNCTION: music_inference_model
+
+    def music_inference_model(LSTM_cell, densor, n_values=78, n_a=64, Ty=100):
+        """
+        Uses the trained "LSTM_cell" and "densor" from model() to generate a sequence of values.
+
+        Arguments:
+        LSTM_cell -- the trained "LSTM_cell" from model(), Keras layer object
+        densor -- the trained "densor" from model(), Keras layer object
+        n_values -- integer, umber of unique values
+        n_a -- number of units in the LSTM_cell
+        Ty -- integer, number of time steps to generate
+
+        Returns:
+        inference_model -- Keras model instance
+        """
+        
