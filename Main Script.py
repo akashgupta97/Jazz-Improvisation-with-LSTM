@@ -112,4 +112,13 @@ def djmodel(Tx, n_a, n_values):
         Returns:
         inference_model -- Keras model instance
         """
-        
+
+        # Define the input of your model with a shape
+        x0 = Input(shape=(1, n_values))
+
+        # Define s0, initial hidden state for the decoder LSTM
+        a0 = Input(shape=(n_a,), name='a0')
+        c0 = Input(shape=(n_a,), name='c0')
+        a = a0
+        c = c0
+        x = x0
