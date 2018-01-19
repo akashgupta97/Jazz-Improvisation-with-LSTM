@@ -122,3 +122,23 @@ def djmodel(Tx, n_a, n_values):
         a = a0
         c = c0
         x = x0
+
+        ### START CODE HERE ###
+        # Step 1: Create an empty list of "outputs" to later store your predicted values (≈1 line)
+        outputs = []
+
+        # Step 2: Loop over Ty and generate a value at every time step
+        for t in range(Ty):
+            # Step 2.A: Perform one step of LSTM_cell (≈1 line)
+            a, _, c = LSTM_cell(x, initial_state=[a, c])
+
+            # Step 2.B: Apply Dense layer to the hidden state output of the LSTM_cell (≈1 line)
+            out = densor(a)
+
+            # Step 2.C: Append the prediction "out" to "outputs". out.shape = (None, 78) (≈1 line)
+            outputs.append(out)
+
+            # Step 2.D: Select the next value according to "out", and set "x" to be the one-hot representation of the
+            #           selected value, which will be passed as the input to LSTM_cell on the next step. We have provided
+            #           the line of code you need to do this.
+            x = Lambda(one_hot)(out)
