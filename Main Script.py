@@ -122,3 +122,12 @@ def djmodel(Tx, n_a, n_values):
         a = a0
         c = c0
         x = x0
+
+        ### START CODE HERE ###
+        # Step 1: Create an empty list of "outputs" to later store your predicted values (≈1 line)
+        outputs = []
+
+        # Step 2: Loop over Ty and generate a value at every time step
+        for t in range(Ty):
+            # Step 2.A: Perform one step of LSTM_cell (≈1 line)
+            a, _, c = LSTM_cell(x, initial_state=[a, c])
