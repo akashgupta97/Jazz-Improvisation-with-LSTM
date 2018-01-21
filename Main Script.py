@@ -130,6 +130,7 @@ def djmodel(Tx, n_a, n_values):
         # Step 2: Loop over Ty and generate a value at every time step
         for t in range(Ty):
             # Step 2.A: Perform one step of LSTM_cell (≈1 line)
+<<<<<<< HEAD
             a, _, c = LSTM_cell(x, initial_state=[a, c])
 
             # Step 2.B: Apply Dense layer to the hidden state output of the LSTM_cell (≈1 line)
@@ -142,3 +143,6 @@ def djmodel(Tx, n_a, n_values):
             #           selected value, which will be passed as the input to LSTM_cell on the next step. We have provided
             #           the line of code you need to do this.
             x = Lambda(one_hot)(out)
+=======
+            a, _, c = LSTM_cell(x, initial_state=[a, c])
+>>>>>>> d6b91956604b7cec2bd11b1cb8bc354829bba0f1
