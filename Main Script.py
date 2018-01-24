@@ -149,3 +149,5 @@ def djmodel(Tx, n_a, n_values):
             ### END CODE HERE ###
 
             return inference_model
+
+        inference_model = music_inference_model(LSTM_cell, densor, n_values=78, n_a=64, Ty=50)
