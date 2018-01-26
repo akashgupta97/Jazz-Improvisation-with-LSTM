@@ -151,3 +151,7 @@ def djmodel(Tx, n_a, n_values):
             return inference_model
 
         inference_model = music_inference_model(LSTM_cell, densor, n_values=78, n_a=64, Ty=50)
+
+        x_initializer = np.zeros((1, 1, 78))
+        a_initializer = np.zeros((1, n_a))
+        c_initializer = np.zeros((1, n_a))
