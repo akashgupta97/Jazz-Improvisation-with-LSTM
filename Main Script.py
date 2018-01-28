@@ -155,3 +155,21 @@ def djmodel(Tx, n_a, n_values):
         x_initializer = np.zeros((1, 1, 78))
         a_initializer = np.zeros((1, n_a))
         c_initializer = np.zeros((1, n_a))
+
+        # GRADED FUNCTION: predict_and_sample
+
+        def predict_and_sample(inference_model, x_initializer=x_initializer, a_initializer=a_initializer,
+                               c_initializer=c_initializer):
+            """
+            Predicts the next value of values using the inference model.
+
+            Arguments:
+            inference_model -- Keras model instance for inference time
+            x_initializer -- numpy array of shape (1, 1, 78), one-hot vector initializing the values generation
+            a_initializer -- numpy array of shape (1, n_a), initializing the hidden state of the LSTM_cell
+            c_initializer -- numpy array of shape (1, n_a), initializing the cell state of the LSTM_cel
+
+            Returns:
+            results -- numpy-array of shape (Ty, 78), matrix of one-hot vectors representing the values generated
+            indices -- numpy-array of shape (Ty, 1), matrix of indices representing the values generated
+            """
