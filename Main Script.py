@@ -173,3 +173,14 @@ def djmodel(Tx, n_a, n_values):
             results -- numpy-array of shape (Ty, 78), matrix of one-hot vectors representing the values generated
             indices -- numpy-array of shape (Ty, 1), matrix of indices representing the values generated
             """
+
+            ### START CODE HERE ###
+            # Step 1: Use your inference model to predict an output sequence given x_initializer, a_initializer and c_initializer.
+            pred = inference_model.predict([x_initializer, a_initializer, c_initializer])
+            # Step 2: Convert "pred" into an np.array() of indices with the maximum probabilities
+            indices = np.argmax(pred, 2)
+            # Step 3: Convert indices to one-hot vectors, the shape of the results should be (1, )
+            results = to_categorical(indices, num_classes=None)
+            ### END CODE HERE ###
+
+            return results, indices
