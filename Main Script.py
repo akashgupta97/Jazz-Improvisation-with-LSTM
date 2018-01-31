@@ -184,3 +184,8 @@ def djmodel(Tx, n_a, n_values):
             ### END CODE HERE ###
 
             return results, indices
+
+        results, indices = predict_and_sample(inference_model, x_initializer, a_initializer, c_initializer)
+        print("np.argmax(results[12]) =", np.argmax(results[12]))
+        print("np.argmax(results[17]) =", np.argmax(results[17]))
+        print("list(indices[12:18]) =", list(indices[12:18]))
