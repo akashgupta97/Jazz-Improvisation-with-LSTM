@@ -189,3 +189,5 @@ def djmodel(Tx, n_a, n_values):
         print("np.argmax(results[12]) =", np.argmax(results[12]))
         print("np.argmax(results[17]) =", np.argmax(results[17]))
         print("list(indices[12:18]) =", list(indices[12:18]))
+
+        out_stream = generate_music(inference_model)
