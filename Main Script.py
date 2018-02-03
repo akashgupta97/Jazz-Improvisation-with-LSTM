@@ -191,3 +191,5 @@ def djmodel(Tx, n_a, n_values):
         print("list(indices[12:18]) =", list(indices[12:18]))
 
         out_stream = generate_music(inference_model)
+
+        IPython.display.Audio('./data/30s_trained_model.mp3')
